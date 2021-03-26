@@ -13,7 +13,6 @@ import PersonContext from "../context/PersonContext";
 
 const TableConctacts = () => {
   const personContext = useContext(PersonContext);
-
   return (
     <>
       <Heading style={{ margin: "1em auto", fontSize: 25 }}>
@@ -34,7 +33,18 @@ const TableConctacts = () => {
                 <Td>{el.name}</Td>
                 <Td>{el.email}</Td>
                 <Td isNumeric>
-                  <Button colorScheme="red" onClick={() => personContext.deleteItem(el.id)}>
+                  <Button
+                    colorScheme="blue"
+                    onClick={() => personContext.getByPerson(el)}
+                  >
+                    Editar
+                  </Button>
+                </Td>
+                <Td isNumeric>
+                  <Button
+                    colorScheme="red"
+                    onClick={() => personContext.deletePerson(el.id)}
+                  >
                     Borrar
                   </Button>
                 </Td>
