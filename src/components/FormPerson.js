@@ -25,8 +25,6 @@ const FormPerson = () => {
     e.preventDefault();
     if (edit === true) {
       updatePerson(person.name, person.email);
-      console.log(person.name, person.email)
-
     } else {
       addPerson(person.name, person.email);
     }
